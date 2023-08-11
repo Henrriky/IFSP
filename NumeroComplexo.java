@@ -2,6 +2,7 @@ package br.edu.ifsp.spo.edda.exercicio.semana3;
 
 public class NumeroComplexo {
 
+		
 		float a;
 		float b;
 		
