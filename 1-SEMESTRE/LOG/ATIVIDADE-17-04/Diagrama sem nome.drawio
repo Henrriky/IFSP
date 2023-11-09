@@ -1,0 +1,81 @@
+<mxfile host="app.diagrams.net" modified="2023-04-14T19:52:05.756Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 OPR/97.0.0.0" etag="601vccPaAY7OHUie0Amc" version="21.1.8" type="device">
+  <diagram name="Página-1" id="q9gq5t0L8dknP6niz7TQ">
+    <mxGraphModel dx="3667" dy="1608" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="iq8G3mFP7qzzBMPplHsu-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="iq8G3mFP7qzzBMPplHsu-1" target="iq8G3mFP7qzzBMPplHsu-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iq8G3mFP7qzzBMPplHsu-1" value="INICIO" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="156.66" y="20" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iq8G3mFP7qzzBMPplHsu-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="iq8G3mFP7qzzBMPplHsu-2" target="iq8G3mFP7qzzBMPplHsu-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iq8G3mFP7qzzBMPplHsu-2" value="SALARIO_MIN, QTD_KW_RESIDENCIA, VALOR_REAL_POR_KW, &lt;br&gt;VALOR_PAGO_RES, VALOR_PAG_ANTECIPADO, VALOR_PAG_ATRASO" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-16.33" y="120" width="466" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iq8G3mFP7qzzBMPplHsu-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0.183;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="iq8G3mFP7qzzBMPplHsu-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="216.66666666666697" y="290" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iq8G3mFP7qzzBMPplHsu-5" value="&quot;Digite o seu salário mínimo: &quot;" style="shape=display;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="144.99" y="210" width="143.33" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="iq8G3mFP7qzzBMPplHsu-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=92.08125000000001;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="iq8G3mFP7qzzBMPplHsu-6" target="iq8G3mFP7qzzBMPplHsu-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iq8G3mFP7qzzBMPplHsu-6" value="&lt;br&gt;SALARIO_MIN" style="shape=manualInput;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="156.65" y="302" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iq8G3mFP7qzzBMPplHsu-22" value="FIM" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="174.65999999999997" y="1136" width="66" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="iq8G3mFP7qzzBMPplHsu-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.493;entryY=0.278;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="iq8G3mFP7qzzBMPplHsu-28" target="iq8G3mFP7qzzBMPplHsu-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iq8G3mFP7qzzBMPplHsu-28" value="&quot;Digite a quantidade quilowatt gasta na sua residência: &quot;" style="shape=display;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="123.99" y="393" width="179.33" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="iq8G3mFP7qzzBMPplHsu-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="iq8G3mFP7qzzBMPplHsu-29" target="iq8G3mFP7qzzBMPplHsu-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iq8G3mFP7qzzBMPplHsu-29" value="&lt;br&gt;QTD_KW_RESIDENCIA" style="shape=manualInput;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="126.65" y="481" width="176.67" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iq8G3mFP7qzzBMPplHsu-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=119.38125;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="iq8G3mFP7qzzBMPplHsu-31" target="iq8G3mFP7qzzBMPplHsu-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iq8G3mFP7qzzBMPplHsu-31" value="&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;VALOR_REAL_POR_KW &amp;lt;- 0.001 * SALARIO_MIN&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;VALOR_PAGO_RES &amp;lt;- VALOR_REAL_POR_KW * QTD_KW_RESIDENCIA&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;VALOR_PAG_ANTECIPADO &amp;lt;- VALOR_PAGO_RES - (VALOR_PAGO_RES * 0.08)&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;VALOR_PAG_ATRASO &amp;lt;- VALOR_PAGO_RES + (VALOR_PAGO_RES * 0.10)&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-18" y="567" width="466" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="iq8G3mFP7qzzBMPplHsu-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="iq8G3mFP7qzzBMPplHsu-33" target="iq8G3mFP7qzzBMPplHsu-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iq8G3mFP7qzzBMPplHsu-33" value="&quot;O valor em reais de &lt;br&gt;cada KW é R$: &quot;, VALOR_REAL_POR_KW&amp;nbsp;" style="shape=display;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="96.15" y="673" width="223.01" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="iq8G3mFP7qzzBMPplHsu-38" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="iq8G3mFP7qzzBMPplHsu-36" target="iq8G3mFP7qzzBMPplHsu-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iq8G3mFP7qzzBMPplHsu-36" value="&quot;O valor a ser pago &lt;br&gt;por sua residência é: &quot;, VALOR_PAGO_RES" style="shape=display;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="95.15" y="790" width="223.01" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="iq8G3mFP7qzzBMPplHsu-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=-0.021;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="iq8G3mFP7qzzBMPplHsu-37" target="iq8G3mFP7qzzBMPplHsu-43">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iq8G3mFP7qzzBMPplHsu-37" value="&quot;O novo valor a ser pago por essa &lt;br&gt;residência, a partir de um desconto de&lt;br&gt;8% por pagamento antecipado &lt;br&gt;é R$: &quot;, VALOR_PAG_ANTECIPADO" style="shape=display;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="73" y="898.97" width="267.49" height="81.03" as="geometry" />
+        </mxCell>
+        <mxCell id="iq8G3mFP7qzzBMPplHsu-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="iq8G3mFP7qzzBMPplHsu-43" target="iq8G3mFP7qzzBMPplHsu-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iq8G3mFP7qzzBMPplHsu-43" value="&quot;O novo valor a ser pago por essa &lt;br&gt;residência, a partir de um acréscimo de&lt;br&gt;10% por pagamento atrasado é R$: &quot;, VALOR_PAG_ATRASO" style="shape=display;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="72.91" y="1020" width="267.49" height="81.03" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

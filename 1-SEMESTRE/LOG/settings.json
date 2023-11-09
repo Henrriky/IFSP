@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "*.ejs": "html",
+        "*.css": "css",
+        "*.yml": "dockerfile",
+        "EX4.C": "cpp",
+        "EX3.C": "cpp",
+        "EX2.C": "cpp",
+        "EX1.C": "cpp"
+    }
+}
