@@ -1,0 +1,3 @@
+- [Eric Evans - DDD](https://fabiofumarola.github.io/nosql/readingMaterial/Evans03.pdf)
+- [Vaughn Verson - DDD](https://dl.ebooksworld.ir/motoman/AW.Implementing.Domain-Driven.Design.www.EBooksWorld.ir.pdf)
+- [Martin Flower - UML Essential](https://archive.org/details/martin-fowler-uml-essencial.-1-bookman-2004)
