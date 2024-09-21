@@ -108,13 +108,40 @@ Enlance + Fisica
                         - 255.255.0.0/16   (16 Bits de subrede) <-> 2 Octeto para **REDE** e 2 Octetos **para HOST**
                     - Classe C
                         - 255.255.255.0/24 (16 Bits de subrede) <-> 3 Octeto para **REDE** e 1 Octetos **para HOST**s
-
-
-
-
-
-
-
+            3. Notação CIDR
+                - A **MASCARÁ DE SUBREDE** é representada pela quantidade de bits 1s que você tem.
+                    - /8    8  Bits de Subrede  e  24 de Host
+                    - /9    9  Bits de Subrede  e  23 de Host
+                    - /10   10 Bits de Subrede  e  22  de  Host
+                - O primeiro e ultima endereço não pode ser fornecido. 
+                    - NOTA: O IPScanner utiliza o Broadcast para identificar os endereços da rede
+                - O servidores DHCP fornece os IPS
+                - Endereçamento IP Hierarquico
+                    - Lab 2 -> 10.100.2
+                        - 10.100.4.0 (Rede)
+                        - 10.100.4.255 (Broadcast)
+                    - Lab 3 -> 10.100.3
+                        - 10.100.4.0 (Rede)
+                        - 10.100.4.255 (Broadcast)
+                    - Lab 4 -> 10.100.4
+                        - 10.100.4.0 (Rede)
+                        - 10.100.4.255 (Broadcast)
+            4. Endereçamento Público
+                - É utilizado na internet
+            5. Endereçamento Privado     
+                - Foi criado para permitir que as empresas não gastem os IP's públicos
+                - Endereçamento RFC 1918
+                - 10.X.X.X
+                - 172.16.X.X
+                - 192.168.X.X
+                - APIPA - Automatic Private IP Address (O Windows usa ele quando não consegue obter um endereço pelo DHCP)
+                    - 169.254.X.Y
+            6. Shared IP Address
+                - CGNAT
+                - Shared IP Addres 
+                - Carrier Grade
+                - Provider IP Address
+            - 100.64.X.X
     - IPv6 possudi 128 Bits
 
 
