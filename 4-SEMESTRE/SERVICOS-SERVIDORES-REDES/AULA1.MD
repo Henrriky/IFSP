@@ -143,6 +143,8 @@ Enlance + Fisica
                 - Provider IP Address
             - 100.64.X.X
     - IPv6 possudi 128 Bits
+    - TODO: Estudar CISCO
+        - Default Gateway
 
 
 
