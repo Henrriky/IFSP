@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@font-face {
+    font-family: 'BlackCloverFont';
+    src: url('img/BlackCloverFont.otf') format('opentype');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'BlackCloverFont', sans-serif;
+    margin: 0;
+    text-align: center;
+    background-color: #140034;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: #170F0D;
+    width: 100%;
+}
+
+.header-links {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.header-link {
+    list-style: none;
+    font-size: 25px;
+}
+
+.header-link a {
+    color: #E2CD95;
+}
+
+header img {
+    width: 50px;
+    height: 50px;
+}
+
+header h1 {
+    color: #E2CD95;
+    letter-spacing: 5px;
+}
+
+.sinopse {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    height: auto;
+    color: #E2CD95;
+    margin-inline: auto;
+    margin-top: 40px;
+    background-color: #1E0703;
+    padding: 25px;
+    border-radius: 40px;
+}
+
+.sinopse p {
+    font-size: 20px;
+    margin-left: 20px;
+    font-weight: bold;
+    text-align: justify;
+    font-family: 'Raleway';
+    margin-top: 10px;
+    
+}
+
+.sinopse2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.sinopse2 h2 {
+    margin-left: 20px;
+    margin-bottom: 0;
+}
+
+.sinopse img {
+    height: 470px;
+}
+
+
+.tabela table {
+    width: 60%;
+    margin-bottom: 20px;
+}
+
+.tabela th, .tabela td {
+    padding: 10px;
+    text-align: center;
+    font-family: 'Raleway';
+}
+
+.informacao-adicional {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    background-color: #1E0703;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.info-secao {
+    background-color: #E2CD95;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.info-secao h2 {
+    color: #140034;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.info-secao table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.info-secao table th,
+.info-secao table td {
+    border: 1px solid #140034;
+    padding: 8px;
+    text-align: center;
+}
+
+.info-secao ul,
+.info-secao ol {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.info-secao ul li,
+.info-secao ol li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.info-secao ul li a {
+    color: #140034;
+    font-weight: bold;
+}
+
+.info-secao ul li a:hover {
+    text-decoration: underline;
+}
+
+.esquadroes {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-inline: auto;
+    background-color: #EAD2BD;
+    width: 1200px;
+    border-radius: 7.5px;
+    padding: 15px;
+    margin-block: 40px
+    
+}
+
+.esquadroes img {
+    width: 120px;
+    height: 120px;
+}
+
+.esquadroes h2 {
+    font-size: 22px;
+    color: rgb(58, 53, 53);
+}
+
+.grid {
+    border: solid 1px rgb(58, 53, 53);
+}
+
+.inscrever {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-inline: auto;
+    margin-bottom: 20px;
+}
+
+.inscrever form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: white;
+    border-radius: 8px;
+    padding: 35px;
+}
+
+.inscrever form input {
+    height: 100%;
+    width: 100%;
+    border: 1px solid gray;
+    padding: 5px;
+    outline: none;
+    margin-block: 5px;
+    font-size: 18px;
+    font-family: 'Roboto';
+    border-radius: 10px;
+    transition: all 0.8s;
+}
+
+.inscrever form input:focus {
+    border: 1px solid rgb(128, 52, 128);
+}
+
+
+.inscrever form input:nth-child(3) {
+    height: 100px;
+}
+
+.inscrever form input[type=submit]{
+    margin-top: 10px;
+    font-size: 18px;
+    background-color: #140034;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Raleway';
+    cursor: pointer;
+    letter-spacing: 2px;
+}
+
+.inscrever h2 {
+    font-family: 'Raleway';
+    text-transform: uppercase;
+    text-decoration: 2px underline #140034;
+}
+
+.aleatorio {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;  
+}
+
+.conteudo h1 {
+    margin: 0;
+}
+
+#personagem {
+    font-size: 25px;
+    margin-block: 20px;
+    color: goldenrod;
+}
+
+.buttonRandom {
+    margin-top: 10px;
+    font-size: 18px;
+    background-color: #140034;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Raleway';
+    cursor: pointer;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}

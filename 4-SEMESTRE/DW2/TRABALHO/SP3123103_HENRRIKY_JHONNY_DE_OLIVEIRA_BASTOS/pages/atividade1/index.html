@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Simples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            background-color: #f7f7f7;
+            border-radius: 10px;
+        }
+        .container-input input {
+            border: none;
+            outline: none;
+            border-radius: 8px;
+            background-color: bisque;
+            width: 180px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .container-digit {
+            font-size: 16px;
+            width: 40px;
+            padding: 10px;
+            margin: 5px;
+            outline: none;
+            border: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>CALCULADORA</h2>
+        <div class="container-input">
+            <input type="text" id="result" readonly onkeydown="handleInputOnKeyDown(event)">
+        </div>
+        <br>
+        <div class="container-digits">
+            <button class="container-digit" onclick="appendNumber(7)">7</button>
+            <button class="container-digit" onclick="appendNumber(8)">8</button>
+            <button class="container-digit" onclick="appendNumber(9)">9</button>
+            <button class="container-digit" onclick="setOperation('/')">/</button>
+            <br>
+            <button class="container-digit" onclick="appendNumber(4)">4</button>
+            <button class="container-digit" onclick="appendNumber(5)">5</button>
+            <button class="container-digit" onclick="appendNumber(6)">6</button>
+            <button class="container-digit" onclick="setOperation('*')">*</button>
+            <br>
+            <button class="container-digit" onclick="appendNumber(1)">1</button>
+            <button class="container-digit" onclick="appendNumber(2)">2</button>
+            <button class="container-digit" onclick="appendNumber(3)">3</button>
+            <button class="container-digit" onclick="setOperation('-')">-</button>
+            <br>
+            <button class="container-digit" onclick="appendNumber(0)">0</button>
+            <button class="container-digit" onclick="clearResult()">C</button>
+            <button class="container-digit" onclick="calculate()">=</button>
+            <button class="container-digit" onclick="setOperation('+')">+</button>
+        </div>
+    </div>
+
+    <script>
+        let currentInput = '';
+        let previousInput = '';
+        let operation = '';
+
+        function appendNumber(number) {
+            currentInput += number;
+            document.getElementById('result').value = currentInput;
+        }
+
+        function popNumber () {
+            const currentInputLength = currentInput.length;
+            if (currentInputLength === 0) return
+            currentInput = String(currentInput).slice(0, -1)
+            document.getElementById('result').value = currentInput;
+        }
+
+        function setOperation(op) {
+            if (currentInput === '') return;
+            operation = op;
+            previousInput = currentInput;
+            currentInput = '';
+        }
+
+        function calculate() {
+            if (previousInput === '' || currentInput === '' || operation === '') return;
+            let result;
+            switch (operation) {
+                case '+':
+                    result = parseFloat(previousInput) + parseFloat(currentInput);
+                    break;
+                case '-':
+                    result = parseFloat(previousInput) - parseFloat(currentInput);
+                    break;
+                case '*':
+                    result = parseFloat(previousInput) * parseFloat(currentInput);
+                    break;
+                case '/':
+                    result = parseFloat(previousInput) / parseFloat(currentInput);
+                    break;
+            }
+            document.getElementById('result').value = result;
+            currentInput = result;
+            operation = '';
+        }
+
+        function clearResult() {
+            currentInput = '';
+            previousInput = '';
+            operation = '';
+            document.getElementById('result').value = '';
+        }
+
+        function containsOnlyDigits(key) {
+            return /^\d+$/.test(key)
+        }
+
+        function containsValidOperation (key) {
+            const operations = [
+                "*",
+                "/",
+                "-",
+                "+",
+                "="
+            ]
+            return operations.includes(key)
+        }
+
+        function handleInputOnKeyDown(event) {
+            const keyPressed = event.key
+            const keyPressedIsDigit = containsOnlyDigits(keyPressed)
+            const keyPressedIsValidOperation = containsValidOperation(keyPressed)
+            const isBackspace = keyPressed === "Backspace"
+            const isEnter = keyPressed === "Enter"
+            if (keyPressedIsDigit) {
+                appendNumber(keyPressed)
+            } else if (keyPressedIsValidOperation) {
+                setOperation(keyPressed)
+                console.log(operation);
+            } else if (isBackspace)  {
+                popNumber()
+            } else if (isEnter) {
+                calculate()
+            }
+        }
+
+        window.onload = function (event) {
+            document.getElementById('result').value = "";
+        }
+    </script>
+
+</body>
+</html>
