@@ -72,6 +72,10 @@ para o usuário, enquanto a aplicação executa uma tarefa em segundo plano.**
 
 ### Threads em Java
 
+#### Exemplo 1 de Threads
+
+- No código da atividade 1 anexada nesse repositório, podemos ver que ao executar o programa e iniciar o método main, a ordem de execução das thread é feita de forma aleatória para cada execução nova. Isso mostra mais sobre o contexto de execução do que da aplicação em si. Além disso, tal exemplo, evidencia que a execução da aplicação ocorre em paralelo e sem qualquer sincronização.
+
 #### Exemplo sem Threads
 
 - Quando executamos por exemplo o cálculo dos números primos de um intervalo muito grande sem Threads, ao utilizar botões do JFrame o botão fica travado pois ele executa na mesma Thread que a classe que processa os números primos.
