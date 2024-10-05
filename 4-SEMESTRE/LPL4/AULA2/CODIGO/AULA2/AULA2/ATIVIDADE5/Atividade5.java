@@ -2,7 +2,7 @@ package AULA2.ATIVIDADE5;
 
 import javax.swing.SwingUtilities;
 
-public class Atividade4 {
+public class Atividade5 {
 
 	public static void main(String[] args) {
 

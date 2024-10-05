@@ -5,19 +5,23 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 
-public class FibonnaciCTRunnable extends JFrame implements ActionListener {
+public class FibonnaciCTRunnable extends JFrame implements ActionListener, Runnable {
 
 	private static final long serialVersionUID = 1L;
 	private Painel painel;
 	private boolean cancel;
 	
 	public FibonnaciCTRunnable () {
-		super("Fibonnaci Sem Thread");
+		super("Fibonnaci com Thread");
 		setContentPane(painel = new Painel());
 		painel.getBtnCancelar().addActionListener(this);
 		painel.getBtnLimpar().addActionListener(this);
 		painel.getBtnIniciar().addActionListener(this);
 		setSize(400, 400);
+		
+		
+		
+		
 	}
 	
 	@Override
@@ -27,11 +31,7 @@ public class FibonnaciCTRunnable extends JFrame implements ActionListener {
 			painel.getInputTxtAreaResult().setText(null);
 			painel.getBtnLimpar().setEnabled(false);
 			painel.getBtnIniciar().setEnabled(false);
-			new Thread(() -> {
-				calculaFibonnaci(Integer.parseInt(painel.getinputTxtQtdNumeros().getText()));
-				painel.getBtnLimpar().setEnabled(true);
-				painel.getBtnIniciar().setEnabled(true);
-			}).start();
+			new Thread(this, "fibonnaci").start();
 		} else if (e.getSource() == painel.getBtnLimpar()) {
 			painel.getInputTxtAreaResult().setText(null);
 		} else {
@@ -53,5 +53,11 @@ public class FibonnaciCTRunnable extends JFrame implements ActionListener {
 			} else {
 				return fibonacci(n - 1) + fibonacci(n - 2);
 			}
+	}
+	
+	public void run() {
+		calculaFibonnaci(Integer.parseInt(painel.getinputTxtQtdNumeros().getText()));
+		painel.getBtnLimpar().setEnabled(true);
+		painel.getBtnIniciar().setEnabled(true);
 	}
 }
