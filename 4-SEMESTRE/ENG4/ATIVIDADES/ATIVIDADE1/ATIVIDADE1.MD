@@ -21,6 +21,13 @@
         - Time de Desenvolvimento: Nessa metodologia, a equipe, que deve ser de no máximo 10 pessoas, recebe um objetivo a ser cumprido e tem como objetivo concepção, construção e testes do produto final do projeto. Além disso, é importante frizar que o Scrum visa uma equipe autogerenciável, evitando a definição de cargos ou castas de forma estrita e engessada.
 7. Com relação a metodologias de desenvolvimento de software, o que é Lean? Forneça algumas características
     - O Lean é uma metodologia ágil que tem como objetivo utilizar apenas os recursos necessários para a realização de um determinado trabalho ou projeto. Com ele, os gestores podem evitar disperdícios, aproveitando melhor o tempo e a produtividade dos colaboradores. Para alcançar isso, o Lean possui alguns princípios, como: eliminação constante de problemas que impedem os processos, garantia de um fluxo de trabalho claro e sem ruídos de comunicação, priorizar e definir as atividades e suporte para a entregas contínuas e de qualidade.
-8. O manifesto Ágil se aplica apenas a metodologias de desenvolvimento de software? Explique. Dê exemplos.
-    - 
-9. O SCRUM pode ser utilizado em gerenciamento de empresas, explique o que é utilizado e como pode ser utilizado.
+8. O manifesto Ágil se aplica apenas a metodologias de desenvolvimento de software? Explique. Dê exemplos. 
+    - Embora o manifesto ágil tenha sido criado no ambiente de desenvolvimento de softwae, hoje em dia ele é amplamento utilizado em outras áreas, como gestão de projetos das mais variadas áreas, uma vez que seus princípios e valores podem ser adaptados para outros contextos que envolvem projetos, colaboração em equipe e entregas iterativas. Um bom exemplo disso pode ser uma empresa que atua no setor de marketing, seus projetos podem utilizar a metodologia ágil, pois existem entregas contínuas, acompanhamento com o cliente e trabalho em equipe. 
+9. O SCRUM pode ser utilizado em gerenciamento de empresas, explique o que é utilizado e como pode ser utilizado. O SCRUM não necessariamento pode ser utilizado no gerenciamento de empresas, pois ele é um conjunto de boas práticas ou metodologias para o gerenciamento de projetos. No entanto, omo o SCRUM é um framework que utilizando-se de entregas contínuas, ciclos de entregas curtos e o foco em resultados satisfatórios e constantes, ele pode sim ser usado no contexto de gerenciamento de empresa, como por exemplo dentro dos setores que trabalham com o gerenciamento de projetos.
+
+
+
+
+
+
+
