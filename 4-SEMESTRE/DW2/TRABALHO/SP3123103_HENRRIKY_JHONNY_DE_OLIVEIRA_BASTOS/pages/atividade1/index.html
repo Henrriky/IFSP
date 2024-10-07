@@ -1,76 +1,61 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora Simples</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-        .container {
-            width: 300px;
-            margin: 0 auto;
-            padding: 20px;
-            text-align: center;
-            background-color: #f7f7f7;
-            border-radius: 10px;
-        }
-        .container-input input {
-            border: none;
-            outline: none;
-            border-radius: 8px;
-            background-color: bisque;
-            width: 180px;
-            padding: 10px;
-            margin: 10px 0;
-        }
-        .container-digit {
-            font-size: 16px;
-            width: 40px;
-            padding: 10px;
-            margin: 5px;
-            outline: none;
-            border: none;
-            border-radius: 4px;
-        }
-    </style>
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Atividade 1</title>
 </head>
-<body>
 
+<body>
     <div class="container">
-        <h2>CALCULADORA</h2>
-        <div class="container-input">
-            <input type="text" id="result" readonly onkeydown="handleInputOnKeyDown(event)">
-        </div>
-        <br>
-        <div class="container-digits">
-            <button class="container-digit" onclick="appendNumber(7)">7</button>
-            <button class="container-digit" onclick="appendNumber(8)">8</button>
-            <button class="container-digit" onclick="appendNumber(9)">9</button>
-            <button class="container-digit" onclick="setOperation('/')">/</button>
-            <br>
-            <button class="container-digit" onclick="appendNumber(4)">4</button>
-            <button class="container-digit" onclick="appendNumber(5)">5</button>
-            <button class="container-digit" onclick="appendNumber(6)">6</button>
-            <button class="container-digit" onclick="setOperation('*')">*</button>
-            <br>
-            <button class="container-digit" onclick="appendNumber(1)">1</button>
-            <button class="container-digit" onclick="appendNumber(2)">2</button>
-            <button class="container-digit" onclick="appendNumber(3)">3</button>
-            <button class="container-digit" onclick="setOperation('-')">-</button>
-            <br>
-            <button class="container-digit" onclick="appendNumber(0)">0</button>
-            <button class="container-digit" onclick="clearResult()">C</button>
-            <button class="container-digit" onclick="calculate()">=</button>
-            <button class="container-digit" onclick="setOperation('+')">+</button>
+        <header>
+            <a target="_blank" href="https://blackclover.fandom.com/pt-br/wiki/Black_Clover_Wiki">
+                <img src="../../assets/img/aaa.webp" alt="Imagem do Anime Black Clover">
+            </a>
+            <h1>FÃ CLUBE DE BLACK CLOVER</h1>
+            <ul class="header-links">
+                <li class="header-link">
+                    <a href="../atividade1/index.html">Atividade 1</a>
+                </li>
+                <li class="header-link">
+                    <a href="../atividade2/index.html">Atividade 2</a>
+                </li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="container-calculadora">
+                <h2>CALCULADORA</h2>
+                <div class="container-input">
+                    <input type="text" id="result" readonly onkeydown="handleInputOnKeyDown(event)">
+                </div>
+                <br>
+                <div class="container-digits">
+                    <button class="container-digit" onclick="appendNumber(7)">7</button>
+                    <button class="container-digit" onclick="appendNumber(8)">8</button>
+                    <button class="container-digit" onclick="appendNumber(9)">9</button>
+                    <button class="container-digit" onclick="setOperation('/')">/</button>
+                    <br>
+                    <button class="container-digit" onclick="appendNumber(4)">4</button>
+                    <button class="container-digit" onclick="appendNumber(5)">5</button>
+                    <button class="container-digit" onclick="appendNumber(6)">6</button>
+                    <button class="container-digit" onclick="setOperation('*')">*</button>
+                    <br>
+                    <button class="container-digit" onclick="appendNumber(1)">1</button>
+                    <button class="container-digit" onclick="appendNumber(2)">2</button>
+                    <button class="container-digit" onclick="appendNumber(3)">3</button>
+                    <button class="container-digit" onclick="setOperation('-')">-</button>
+                    <br>
+                    <button class="container-digit" onclick="appendNumber(0)">0</button>
+                    <button class="container-digit" onclick="clearResult()">C</button>
+                    <button class="container-digit" onclick="calculate()">=</button>
+                    <button class="container-digit" onclick="setOperation('+')">+</button>
+                </div>
+            </div>
         </div>
     </div>
-
     <script>
         let currentInput = '';
         let previousInput = '';
@@ -161,6 +146,6 @@
             document.getElementById('result').value = "";
         }
     </script>
-
 </body>
+
 </html>

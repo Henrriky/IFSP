@@ -1,12 +1,195 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
     <title>Atividade 2</title>
 </head>
+
 <body>
-    
+    <div class="container">
+        <header>
+            <a target="_blank" href="https://blackclover.fandom.com/pt-br/wiki/Black_Clover_Wiki">
+                <img src="../../assets/img/aaa.webp" alt="Imagem do Anime Black Clover">
+            </a>
+            <h1>FÃ CLUBE DE BLACK CLOVER</h1>
+            <ul class="header-links">
+                <li class="header-link">
+                    <a href="../atividade1/index.html">Atividade 1</a>
+                </li>
+                <li class="header-link">
+                    <a href="../atividade2/index.html">Atividade 2</a>
+                </li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="container-final-note" id="container-final-note">
+                <h2>Cálculo de nota do Aluno</h2>
+                <input class="container-final-note-input" id="final-work-note-input" type="number" max="10" min="1"
+                    placeholder="Digite a nota do trabalho final">
+                <div class="container-final-note-qtd-works" id="container-final-note-qtd-works">
+                    <input class="container-final-note-input" id="work-qtd-input" type="number" max="10" min="1"
+                        placeholder="Digite a quantidade de trabalhos">
+                    <button class="container-final-note-btn" id="confirm-qtd-works-btn"
+                        onclick="handleConfirmQtdWorksBtn()">
+                        Confirmar
+                    </button>
+                </div>
+                <button class="container-final-note-btn" id="calculate-final-note-btn" onclick="handleCalculateFinalNoteBtn()" >
+                    Calcular nota final
+                </button>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        function clearPreviousWorkNotesInputs() {
+            const containerWorkNoteInputs = document.getElementById("container-work-note-inputs")
+            if (!containerWorkNoteInputs) return
+            containerWorkNoteInputs.remove()
+        }
+
+        function isValidInputNumber(inputWorkQTDValue) {
+            const inputValueIsANumber = !isNaN(inputWorkQTDValue)
+            const inputValueIsBetween1And10 = ((inputWorkQTDValue >= 1) && (inputWorkQTDValue <= 10));
+            if (!inputValueIsANumber) {
+                alert("Por favor, digite um número válido")
+                return false
+            } else if (!inputValueIsBetween1And10) {
+                alert("Por favor, digite um valor entre 1 e 10")
+                return false
+            }
+
+            return true
+        }
+
+        function createInputsToWorkNotes(inputWorkQTDValue) {
+            const divContainerFinalNoteQtdWorks = document.getElementById("container-final-note-qtd-works")
+            const containerWorkNoteInputs = document.createElement("div")
+            const containerWorkNoteInputsTitle = document.createElement("h2")
+            containerWorkNoteInputs.classList.add("container-work-note-inputs")
+            containerWorkNoteInputs.id = "container-work-note-inputs"
+
+            containerWorkNoteInputsTitle.innerText = "Digite as notas de cada trabalho"
+
+            containerWorkNoteInputs.appendChild(containerWorkNoteInputsTitle)
+            for (let i = 1; i <= inputWorkQTDValue; i++) {
+                const inputWorkNote = document.createElement("input")
+                inputWorkNote.classList.add("work-note-input")
+                inputWorkNote.classList.add("container-final-note-input")
+                inputWorkNote.id = `work-note-input-${i}`
+                inputWorkNote.type = "number"
+                inputWorkNote.max = "10"
+                inputWorkNote.min = "1"
+                inputWorkNote.placeholder = `Digite a nota do trabalho individual ${i}`
+                containerWorkNoteInputs.appendChild(inputWorkNote)
+            }
+            divContainerFinalNoteQtdWorks.insertAdjacentElement('afterend', containerWorkNoteInputs)
+        }
+
+        function handleConfirmQtdWorksBtn() {
+            const inputWorkQTD = document.getElementById("work-qtd-input")
+            const inputWorkQTDValue = parseInt(inputWorkQTD.value)
+            if (!isValidInputNumber(inputWorkQTDValue)) return
+            clearPreviousWorkNotesInputs()
+            createInputsToWorkNotes(inputWorkQTDValue)
+        }
+
+        function clearPreviousFinalNote () {
+            const finalStudentNoteText = document.getElementById("final-student-note")
+            if (!finalStudentNoteText) return
+
+            finalStudentNoteText.remove()
+        }
+
+        function isValidNoteNumber(inputNoteValue) {
+            const inputValueIsANumber = !isNaN(inputNoteValue)
+            const inputValueIsBetween0And10 = ((inputNoteValue >= 0) && (inputNoteValue <= 10));
+            if (!inputValueIsANumber) {
+                alert("Por favor, digite uma nota válida")
+                return false
+            } else if (!inputValueIsBetween0And10) {
+                alert("Por favor, digite um nota entre 0 e 10")
+                return false
+            }
+
+            return true
+        }
+
+        function isValidTypedNotes({
+            inputFinalWorkNote,
+            inputsWorkNote,
+        }) {
+            if (!isValidNoteNumber(inputFinalWorkNote.value)) return false
+
+            if (inputsWorkNote.length === 0) {
+                alert("Por favor, insira a quantidade de trabalhos e as notas")
+                return false
+            }
+
+            const allNotesValid = inputsWorkNote.every((inputWorkNote) => {
+                const inputWorkNoteValue = inputWorkNote.value;
+                return isValidNoteNumber(inputWorkNoteValue);
+            });
+
+            if (!allNotesValid) return false;
+
+            return true
+        }
+
+        function calculateFinalNoteBtn({
+            inputFinalWorkNote,
+            inputsWorkNote,
+        }) {
+            const inputFinalWorkValue = parseFloat(inputFinalWorkNote.value)
+            const numberOfWorks = inputsWorkNote.length
+            const sumOfWorks = inputsWorkNote.reduce((sum, workNoteInput) => {
+                const workNoteInputValue = parseFloat(workNoteInput.value)
+                return workNoteInputValue + sum
+            }, 0)
+
+            const individualWorksNote = (0.5 * (sumOfWorks / numberOfWorks))
+            const finalWorkNote = (0.5 * inputFinalWorkValue)
+            const finalStudentNote = individualWorksNote + finalWorkNote
+
+            return { finalStudentNote }
+        }
+
+        function showFinalStudentNoteOnScreen ({
+            divContainerFinalNote,
+            finalStudentNote,
+        }) {
+            const finalStudentNoteText = document.createElement("h2")
+            finalStudentNoteText.id = "final-student-note"
+            finalStudentNoteText.innerText = `A nota final do estudante é ${finalStudentNote}`
+
+            divContainerFinalNote.appendChild(finalStudentNoteText)
+        }
+
+        function handleCalculateFinalNoteBtn() {
+            const inputFinalWorkNote = document.getElementById("final-work-note-input")
+            const inputsWorkNote = Array.from(document.getElementsByClassName("work-note-input"))
+            const divContainerFinalNote = document.getElementById("container-final-note")
+            if(!isValidTypedNotes({
+                inputFinalWorkNote,
+                inputsWorkNote,
+            })) return
+
+            const { finalStudentNote } = calculateFinalNoteBtn({
+                inputFinalWorkNote,
+                inputsWorkNote,
+            })
+            clearPreviousFinalNote()
+            showFinalStudentNoteOnScreen({
+                divContainerFinalNote,
+                finalStudentNote
+            })
+        }
+
+    </script>
 </body>
+
 </html>
