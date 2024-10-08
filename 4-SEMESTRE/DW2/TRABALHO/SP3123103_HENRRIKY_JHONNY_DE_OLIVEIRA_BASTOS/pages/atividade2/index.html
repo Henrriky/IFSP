@@ -106,7 +106,7 @@
         }
 
         function isValidNoteNumber(inputNoteValue) {
-            const inputValueIsANumber = !isNaN(inputNoteValue)
+            const inputValueIsANumber = !isNaN(inputNoteValue) && !isNaN(parseFloat(inputNoteValue))
             const inputValueIsBetween0And10 = ((inputNoteValue >= 0) && (inputNoteValue <= 10));
             if (!inputValueIsANumber) {
                 alert("Por favor, digite uma nota válida")
