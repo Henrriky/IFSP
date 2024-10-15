@@ -42,14 +42,15 @@ class Bd {
 	}
 
 	buscarDespesaPeloId (id) {
-		console.log(id)
 		const result = JSON.parse(localStorage.getItem(id))
+
 		const despesa = new Despesa(
 			result.ano,
 			result.mes,
 			result.dia,
 			result.tipo,
-			result.descricao
+			result.descricao,
+			result.valor
 		)
 
 		return despesa
@@ -116,38 +117,54 @@ function cadastrarDespesa() {
 	}
 }
 
+function limparListaDeDespesas({ lista }) {
+	if (!lista) {
+		document.getElementById('modal_titulo').innerHTML = 'Erro na consulta'
+		document.getElementById('modal_titulo_div').className = 'modal-header text-danger'
+		document.getElementById('modal_conteudo').innerHTML = 'Erro na Consulta! Elemento lista não encontrado'
+		document.getElementById('modal_btn').innerHTML = 'Cancelar'
+		document.getElementById('modal_btn').className = 'btn btn-danger'
+		$('#modalFeedback').modal('show') 
+		return	
+	}
+
+	lista.innerHTML = "";
+}
+
 function consultarDespesas () {
 	const lista = document.getElementById("lista")
+	limparListaDeDespesas({ lista })
 	const { ano, mes, dia, tipo, descricao, valor } = extrairInputsDadosDespesa()
 	const { despesas } = bd.buscarDespesas()
 
-	console.log(despesas)
 
 	const despesasFiltradas = despesas.filter((despesa) => {
 		let filtrar = true;
 
-		if (despesa.ano) {
-			filtrar = despesa.ano === ano
-		} else if (despesa.mes) {
-			filtrar = despesa.mes === mes
-		} else if (despesa.dia) {
-			filtrar = despesa.dia === dia
-		} else if (despesa.tipo) {
-			filtrar = despesa.tipo === tipo
-		} else if (despesa.descricao) {
-			filtrar = despesa.descricao === descricao
-		} else if (despesa.valor) {
-			filtrar = despesa.valor === valor
+		if (ano.value && ano.value !== "Ano") {
+			filtrar = despesa?.ano === ano.value
+		} else if (mes.value && mes.value !== "Mês") {
+			filtrar = despesa?.mes === mes.value
+		} else if (dia.value) {
+			filtrar = despesa?.dia === dia.value
+		} else if (tipo.value && tipo.value !== "Tipo") {
+			filtrar = despesa?.tipo === tipo.value
+			console.log(tipo.value)
+		} else if (descricao.value) {
+			filtrar = despesa?.descricao === descricao.value
+		} else if (valor.value) {
+			filtrar = despesa?.valor === valor.value
 		}
 
 		return filtrar
 	})
 
 
+
 	despesasFiltradas.forEach((despesa) => {
 		const linha = document.createElement("tr")
 		linha.innerHTML = `
-			<td>${despesa.data}</td>
+			<td>${despesa.dia}/${despesa.mes}/${despesa.ano}</td>
 			<td>${despesa.tipo}</td>
 			<td>${despesa.descricao}</td>
 			<td>${despesa.valor}</td>
@@ -156,4 +173,81 @@ function consultarDespesas () {
 	})
 }
 
-// Cálculo mensal - Extrato
+function limparConsultaDespesaMensalAnterior({ cardsWrapper, valorTotal }) {
+	if (!cardsWrapper || !valorTotal) {
+		document.getElementById('modal_titulo').innerHTML = 'Erro na consulta'
+		document.getElementById('modal_titulo_div').className = 'modal-header text-danger'
+		document.getElementById('modal_conteudo').innerHTML = 'Erro na Consulta! Elemento não encontrado'
+		document.getElementById('modal_btn').innerHTML = 'Cancelar'
+		document.getElementById('modal_btn').className = 'btn btn-danger'
+		$('#modalFeedback').modal('show') 
+		return	
+	}
+
+	cardsWrapper.innerHTML = ""
+	valorTotal.innerHTML = ""
+}
+
+const tipos = {
+	"1": "Alimentação",
+	"2": "Educação",
+	"3": "Lazer",
+	"4": "Saúde",
+	"5": "Transporte",
+}
+
+
+function consultarDespesaMensal() {
+
+	const elementValorTotal = document.getElementById("valorTotal")
+	const elementCardWrapper = document.getElementById("cardWrapper")
+	limparConsultaDespesaMensalAnterior({ cardsWrapper: elementCardWrapper, valorTotal: elementValorTotal })
+
+	const { mes } = extrairInputsDadosDespesa()
+	console.log(mes.value)
+	if (mes.value && mes.value === "Mês") {
+		return
+	}
+
+
+	const { despesas } = bd.buscarDespesas()
+
+	const despesasDoMes = despesas.filter((despesa) => {
+		console.log(despesa)
+		if (mes.value && mes.value === "Mês") {
+			return false
+		}
+		console.log(despesa.mes.includes(mes.value))
+		return despesa.mes.includes(mes.value)
+	})
+
+	console.log(despesasDoMes)
+
+	const somaDoMes = despesasDoMes.reduce((soma, despesa) => {
+		if (despesa.valor) {
+			return soma + parseFloat(despesa.valor)
+		} else {
+			return soma
+		}
+	}, 0)
+
+	elementValorTotal.innerText = `R$ ${somaDoMes}`
+	let finalHtml = ""
+	despesasDoMes.forEach((despesa) => {
+		const cardToAppend = `
+		<div class="col-sm-4 mb-4">
+			<div class="card">
+			<div class="card-body">
+				<h4 class="card-title mb-4 text-secondary font-weight-bold">${despesa?.descricao}</h4>
+				<p class="card-text"><b>Valor:</b> R$ ${despesa?.valor}</p>
+				<p class="card-text"><b>Data:</b> ${despesa?.dia}/${despesa?.mes}/${despesa?.ano}</p>
+				<p class="card-text btn btn-info">${tipos[despesa?.tipo]}</p>
+			</div>
+			</div>
+		</div>
+		`
+		finalHtml += cardToAppend
+	})
+
+	elementCardWrapper.innerHTML = finalHtml
+}
