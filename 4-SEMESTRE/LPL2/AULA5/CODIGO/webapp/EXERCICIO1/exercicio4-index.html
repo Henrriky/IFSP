@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Exercicio 4 - Livros</title>
+
+
+<style type="text/css">
+	
+	.bookContainer {
+		max-width: 350px;
+		border: 1px solid black;
+		margin: 20px;
+		padding: 6px;
+		border-radius: 4px;
+	}
+	.bookImage {
+		max-width: 100px;
+        max-height: 150px;
+	}
+	.bookPrice {
+		font-size: 18px;
+	}
+	.btnBuyBook {
+		padding: 6px;
+	    color: white;
+	    background-color: black;
+	    border-radius: 4px;
+	    border: none;
+	    font-size: 16px;
+	    width: 100%;
+	    cursor: pointer;
+	}
+
+</style>
+</head>
+<body>
+	<h1>Bem vindo ao nosso catálogo de livros</h1>
+	<div class="bookContainer">
+		<h2>Código Limpo</h2>
+		<img alt="Livro Código Limpo" src="https://m.media-amazon.com/images/I/51E2055ZGUL._AC_UF1000,1000_QL80_.jpg" class="bookImage">
+		<p class="bookPrice">Preço: R$ 150.00</p>
+		<form action="Exercicio4CadastroPedido" method="POST">
+			<input type="hidden" value="Código Limpo" name="inputLivroNome">
+			<input type="hidden" value="https://m.media-amazon.com/images/I/51E2055ZGUL._AC_UF1000,1000_QL80_.jpg" name="inputLivroImagem">
+			<input type="hidden" value="150.00" name="inputLivroValor">
+			<input type="submit" value="Comprar Livro" name="btnComprar" class="btnBuyBook">
+		</form>
+	</div>
+	<div class="bookContainer">
+		<h2>O Programador Pragmático</h2>
+		<img alt="Livro O Programador Pragmático" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzn5JZad-Dyq-m5s_dKnciBS2a_W_9wJLP5Q&s" class="bookImage">
+		<p class="bookPrice">Preço: R$ 180.00</p>
+		<form action="Exercicio4CadastroPedido" method="POST">
+			<input type="hidden" value="O Programador Pragmático" name="inputLivroNome">
+			<input type="hidden" value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzn5JZad-Dyq-m5s_dKnciBS2a_W_9wJLP5Q&s" name="inputLivroImagem">
+			<input type="hidden" value="180.00" name="inputLivroValor">
+			<input type="submit" value="O Programador Pragmático" name="btnComprar" class="btnBuyBook">
+		</form>
+	</div>
+		<div class="bookContainer">
+		<h2>Algoritmos: Teoria e Prática</h2>
+		<img alt="Livro Algoritmos: Teoria e Prática" src="https://m.media-amazon.com/images/I/71QtOUBMtNL._AC_UF1000,1000_QL80_.jpg" class="bookImage">
+		<p class="bookPrice">Preço: R$ 320.00</p>
+		<form action="Exercicio4CadastroPedido" method="POST">
+			<input type="hidden" value="Algoritmos: Teoria e Prática" name="inputLivroNome">
+			<input type="hidden" value="https://m.media-amazon.com/images/I/71QtOUBMtNL._AC_UF1000,1000_QL80_.jpg" name="inputLivroImagem">
+			<input type="hidden" value="320.00" name="inputLivroValor">
+			<input type="submit" value="O Programador Pragmático" name="btnComprar" class="btnBuyBook">
+		</form>
+	</div>
+</body>
+</html>

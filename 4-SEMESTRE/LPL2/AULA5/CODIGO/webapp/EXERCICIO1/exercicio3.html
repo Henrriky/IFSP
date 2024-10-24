@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Exercicio 3</title>
+</head>
+<body>
+	<h1>Calculadora de temperatura</h1>
+	<form action="Exercicio3AulaAnterior" method="POST" >
+		<p>Temperatura: <input type="text" name="inputTemp" required value="<%= request.getParameter("inputTemp") != null ? request.getParameter("inputTemp") : "" %>"></p>
+		<p>Operação:
+			<br>
+			<input type="radio" id="CEtoFA" name="inputOpcaoConversao" value="CEtoFA" required>
+			<label for="CEtoFA">Celsius para Fahrenheit</label><br>
+			<input type="radio" id="CEtoKE" name="inputOpcaoConversao" value="CEtoKE" required>
+			<label for="CEtoKE">Celsius para Kelvin</label><br>
+			<input type="radio" id="FAtoCE" name="inputOpcaoConversao" value="FAtoCE" required>
+			<label for="FAtoCE">Fahrenheit para Celcius</label><br>
+			<input type="radio" id="FAtoKE" name="inputOpcaoConversao" value="FAtoKE" required>
+			<label for="FAtoKE">Fahrenheit para Kelvin</label><br>
+			<input type="radio" id="KEtoCE" name="inputOpcaoConversao" value="KEtoCE" required>		
+			<label for="KEtoCE">Kelvin para Celsius</label><br>	
+			<input type="radio" id="KEtoFA" name="inputOpcaoConversao" value="KEtoFA" required>		
+			<label for="KEtoFA">Kelvin para Fahrenheit</label><br>	
+		</p>
+		<input type="submit" name="btnCalcular" value="Calcular"></input>
+	</form>
+
+</body>
+</html>
