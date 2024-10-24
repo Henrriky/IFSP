@@ -18,3 +18,17 @@
 - O HTML pode ser gerado através de `out.println()`
 - A expressão `try` chama o `close()` em instâncias que precisam trabalhar com fluxo de dados sem a necessidade de chamar ele de forma explícita.
 
+### Aplicação com Servlet
+
+
+
+
+### Separação de camadas
+
+- Deve-se separar a a lógica de negócio da lógica de apresentação.
+- O ideal é que haja uma separação clara entre estas camadas: 
+    - Controller
+    - View
+    - Model
+
+    
