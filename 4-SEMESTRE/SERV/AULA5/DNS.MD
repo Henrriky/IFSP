@@ -42,7 +42,17 @@
     - A busca do endereço IP é um processo de busca recursiva
 - Normalmente os servidores utilizando Bind ou Nominum.
 - O DNS tem uma resolução reversa: Dado um IP ele fornece o domínio, tendo acesso a isso nós temos a informação da origem.
-    - reverse lookup
+    - forward lookup (dado o nome você tem o endereço IP)
+    - reverse lookup (dado o endereço IP você tem o nome)
+
+1. O ser humano não consegue decorar endereços IP's, por outro lado, os nomes são mais fáceis de lembrar
+2. Era feito através de arquivos, papéis, hosts.txt, armazenamento manual, no flat.
+3.
+4. Primeiro é o . para o NS do .br,
+    - depois vai no .br para o NS do .edu
+    - depois no .edu para o NS do .ifsp.
+5. Microsoft DNS, Bind, Nominum
+
         
 
 
