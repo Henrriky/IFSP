@@ -53,6 +53,16 @@
     - depois no .edu para o NS do .ifsp.
 5. Microsoft DNS, Bind, Nominum
 
+# Configurar DNS no Ubuntu
+
+1. Modificar netplan para modo bridge para que seja possível acessar a internet e baixar pacotes
+2. Executar a instalação do bind
+    - `sudo su`
+    - `apt-get install bind9 bind9utils bind9-doc`
+3. Editar o /etc/default/named
+4. Realizar a reinicialização dos serviços do bind
+    - `systemctl restart bind9`
+    - `systemclt status bind9`
         
 
 
