@@ -54,8 +54,10 @@
     - `sudo apt update`
     - `sudo apt install vsftpd`
     - `sudo systemctl status vsftpd`
-2. Configuração
+2. Configuração do arquivo
     - `sudo nano /etc/vsftpd.conf`
+    - Habilitar LISTEN
+        - listen=YES
     - Acesso geral do FTP
         - anonymous_enable=YES e local_enable=yes
     - Acesso local do FTP
@@ -66,7 +68,11 @@
         - chroot_local_user=YES
     - Habilitar escrita do usuário anonimo 
         - anon_mkdir_write_enable=YES
-    
+    - `systemctl restart vsftpd`
+3. Baixar o filezilla
+    - Site oficial baixar
+    - Conectar com o IP da Máquina na porta 21 com o usuario ifsp01 e senha ifsp01
+    - Enviar os dados
 
 
 # Atividade 8 - Pesquisa a ser feita
