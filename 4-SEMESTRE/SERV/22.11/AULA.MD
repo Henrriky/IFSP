@@ -48,6 +48,27 @@
     - Testar erros: `sudo apache2ctl configtest`
     - `sudo systemctl restart apache2`
 
+# Passo a Passo FTP
+
+1. Instalação:
+    - `sudo apt update`
+    - `sudo apt install vsftpd`
+    - `sudo systemctl status vsftpd`
+2. Configuração
+    - `sudo nano /etc/vsftpd.conf`
+    - Acesso geral do FTP
+        - anonymous_enable=YES e local_enable=yes
+    - Acesso local do FTP
+        - anonymous_enable=NO e local_enable=yes
+    - Habilitar upload
+        - write_enable=YES
+    - Desabilitar acesso aos diretorios somente de home
+        - chroot_local_user=YES
+    - Habilitar escrita do usuário anonimo 
+        - anon_mkdir_write_enable=YES
+    
+
+
 # Atividade 8 - Pesquisa a ser feita
 
 1. 
