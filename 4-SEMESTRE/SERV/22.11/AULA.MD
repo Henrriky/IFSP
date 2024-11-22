@@ -7,8 +7,46 @@
         - Existem dois tipos de Proxy: Transparente (Sem Autenticação) e Proxy Não Transparente (Com Autenticação)
         - Exemplo: No IFSP existe um Proxy Transparente
             - Não existe auditoria dos acessos
+- Tutorial do Moddle
+    - Seguir 1, 3, 4, 5,
 
 # Passo a passo
+
+1. Instalar o apache e arquivo HTML
+    - `apt-get update`
+    - `sudo apt install apache2`
+    - Adicionar HTML em: `vim /var/www/html/index.html`
+2. Criação da pasta para o Website
+    - `sudo mkdir /var/www/your_domain`
+    - `sudo chown -R $USER:$USER /var/www/your_domain`
+    - `sudo chmod -R 755 /var/www/your_domain`
+    - `sudo nano /var/www/your_domain/index.html`
+        ```html
+            <html>
+                <head>
+                    <title>Welcome to Your_domain!</title>
+                </head>
+                <body>
+                    <h1>Success!  The your_domain virtual host is working!</h1>
+                </body>
+            </html>
+        ```
+3. Configuração do apache   
+    - `sudo vim /etc/apache2/sites-available/your_domain.conf`
+    ```conf
+    <VirtualHost *:80>
+        ServerAdmin webmaster@localhost
+        ServerName your_domain
+        ServerAlias www.your_domain
+        DocumentRoot /var/www/your_domain
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+    </VirtualHost>
+    ```
+    - Aplicar: `sudo a2ensite your_domain.conf`
+    - Desabilitar padrão: `sudo a2dissite 000-default.conf`
+    - Testar erros: `sudo apache2ctl configtest`
+    - `sudo systemctl restart apache2`
 
 # Atividade 8 - Pesquisa a ser feita
 
